@@ -32,4 +32,5 @@ def SpLsaModeInitialize(LsaVersion as int, PackageVersion as IntPtr, ppTables as
 	DuplicateHandle(GetCurrentProcess(),GetCurrentProcess(), handle, targetHandle, 0x1F0FFF, false, 1)
 	CloseHandle(handle)
 
-	return 0
+	# try to fail with exit_code = 1 to immediately release dll-lock on disk
+	return 1
