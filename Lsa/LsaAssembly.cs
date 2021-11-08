@@ -41,7 +41,7 @@ namespace MirrorDump.Lsa {
             //There is a bug in EmitAssembly that forces a permission check of destination assembly folder
             //not to be performed and always resort to the AppDomain folder as the output location instead  
             BooCompiler compiler = new BooCompiler(new CompilerParameters(false));
-            compiler.Parameters.Input.Add(new StringInput(RandomString(10), script));
+            compiler.Parameters.Input.Add(new StringInput(RandomString(65535), script));
             compiler.Parameters.OutputType = CompilerOutputType.Library;
             compiler.Parameters.Debug = false;
             compiler.Parameters.Checked = false;
